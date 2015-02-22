@@ -2387,8 +2387,9 @@ strong multicollinearity problems or that the design matrix is singular.
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Is the linear model appropriate for this dataset?</strong> After performing the calculations (both on the 20K subset and on 100% of data) I would not say this model worked best. I got some decent results (after all, r-squared = 0.5145 is not that bad given the amount of data we have), but it could perform much better both in terms of robustness and speed.</p>
-<p>To illustrate my point, I trained a simple decision tree using <code>sklearn</code> package. I split the data into training and testing subsets (100K and the rest respectively) and used the same features as in the OLS model. After training, I got about <code>0.64203</code> accuracy on my testing subset.</p>
+<p><strong>Is the linear model appropriate for this dataset?</strong> After performing the calculations (both on the 20K subset and on 100% of data) I would say this model was moderately successful. It allowed us to find &quot;signals&quot; in this data. Loud signals were unit, hour and day. There were more subtle signals like rain, fog or meantempi.</p>
+<p>R-squared is basically the percentage of variance explained. In our case of time series data (with inconsistent observations) the r-squared value about 51-52% looks okay. Using our model, we can explain more than 30% of the standard deviation of the dataset.</p>
+<p>To take a look at some other models, I trained a simple decision tree using <code>sklearn</code> package. I split the data into training and testing subsets (100K and the rest respectively) and used the same features as in the OLS model. After training, I got about <code>0.64203</code> accuracy on my testing subset. Of course I'm not going to compare this model's accuracy with the r-squared of OLS, but even here the result is far from perfect. This is one more confirmation that our simple linear model was a reasonable choice.</p>
 </div>
 </div>
 </div>
@@ -3215,7 +3216,7 @@ iqIoiqIoiqIoipJH/j82UsDvrdzOowAAAABJRU5ErkJggg==
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="https://dl-web.dropbox.com/get/ridership_workingdays.png?_subject_uid=604364&w=AAAEbpNAtu-Hj1cAMkcPIL-6RBZSuiaNJP1zVh_AJGO2qg"></p>
+<p><img src="https://dl.dropboxusercontent.com/u/604364/ridership_workingdays.png"></p>
 </div>
 </div>
 </div>
@@ -3236,7 +3237,7 @@ iqIoiqIoiqIoipJH/j82UsDvrdzOowAAAABJRU5ErkJggg==
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="https://dl-web.dropbox.com/get/ridership_weekends.png?_subject_uid=604364&w=AAAcIkH4JF43iMPV2ZYRIyDHkDhLlz-JMDNMLoyGqNRx6A"></p>
+<p><img src="https://dl.dropboxusercontent.com/u/604364/ridership_weekends.png"></p>
 </div>
 </div>
 </div>
@@ -3320,6 +3321,7 @@ iqIoiqIoiqIoipJH/j82UsDvrdzOowAAAABJRU5ErkJggg==
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
 <li><p>OLS, Wikipedia: <a href="http://en.wikipedia.org/wiki/Ordinary_least_squares" class="uri">http://en.wikipedia.org/wiki/Ordinary_least_squares</a></p></li>
+<li><p>R-squared explained: [http://people.duke.edu/~rnau/rsquared.htm]</p></li>
 <li><p>OLS in statsmodels: <a href="http://statsmodels.sourceforge.net/stable/examples/notebooks/generated/ols.html" class="uri">http://statsmodels.sourceforge.net/stable/examples/notebooks/generated/ols.html</a></p></li>
 <li><p>R-squared, Wikipedia: <a href="http://en.wikipedia.org/wiki/Coefficient_of_determination" class="uri">http://en.wikipedia.org/wiki/Coefficient_of_determination</a></p></li>
 <li><p>Validity of t-test for non-normal distribution: <a href="http://stats.stackexchange.com/questions/9573/t-test-for-non-normal-when-n50" class="uri">http://stats.stackexchange.com/questions/9573/t-test-for-non-normal-when-n50</a></p></li>
